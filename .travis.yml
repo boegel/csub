@@ -19,4 +19,4 @@ install:
     # generate 'csub' script
     - ./makecsub.py
 script:
-    - test/test.sh
+    - $PWD/test/test.sh
