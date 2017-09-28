@@ -11,7 +11,7 @@ export VSC_SCRATCH=/tmp/$USER
 # make sure fake 'qsub' command is in place (should be in same directory as this script)
 qsub=`which qsub`
 if [ $qsub != $testdir/qsub ]; then
-    echo "ERROR: unexpected 'qsub' command found at $qsub" >&2
+    echo "ERROR: unexpected 'qsub' command found at $qsub (!= $testdir/qsub)" >&2
     exit 1
 fi
 
