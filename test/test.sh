@@ -52,8 +52,8 @@ if [ ${start_count:-1} -ne 0 ]; then
     exit 1
 fi
 chkpt_count=`cat /tmp/$USER/chkpt/*/checkpoint/chkpt.count`
-if [ ${chkpt_count:-1} -ne 0 ]; then
-    echo "ERROR: Unexpected chkpt count (should be 0): $chkpt_count" >&2
+if [ ${chkpt_count:-1} -ne 2 ]; then
+    echo "ERROR: Unexpected chkpt count (should be 2): $chkpt_count" >&2
     exit 1
 fi
 
