@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 ##
-# Copyright 2009-2016 Ghent University
+# Copyright 2009-2020 Ghent University
 #
 # This file is part of csub,
 # originally created by the HPC team of Ghent University (http://ugent.be/hpc/en),
@@ -30,9 +30,14 @@
 import os
 import re
 
-epi = file('epilogue.sh').read()
-base = file('base.sh').read()
-csub = file('csub.py').read()
+with open('epilogue.sh', 'r') as fh:
+    epi = fh.read()
+
+with open('base.sh', 'r') as fh:
+    base = fh.read()
+
+with open('csub.py', 'r') as fh:
+    csub = fh.read()
 
 regepi = re.compile(r"^EPILOGUE\s*=.*", re.M)
 regbase = re.compile(r"^BASE\s*=.*", re.M)
@@ -40,5 +45,6 @@ regbase = re.compile(r"^BASE\s*=.*", re.M)
 csub = regepi.sub('EPILOGUE="""' + epi + "\n" + '"""', csub)
 csub = regbase.sub('BASE="""' + base + "\n" + '"""', csub)
 
-file('csub', 'w').write(csub)
-os.chmod('csub', 0755)
+with open('csub', 'w') as fh:
+    fh.write(csub)
+os.chmod('csub', 0o755)
