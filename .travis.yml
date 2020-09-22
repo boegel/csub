@@ -1,6 +1,42 @@
 language: python
 python: 2.6
 dist: trusty
+matrix:
+  - python: 2.6
+    env: TEST_ID=1 DMTCP_VERSION=2.5.1
+  - python: 2.6
+    env: TEST_ID=2 DMTCP_VERSION=2.5.1
+  - python: 2.6
+    env: TEST_ID=3 DMTCP_VERSION=2.5.1
+  - python: 2.6
+    env: TEST_ID=4 DMTCP_VERSION=2.5.1
+  - python: 2.6
+    env: TEST_ID=5 DMTCP_VERSION=2.5.1
+  - python: 2.7
+    env: TEST_ID=1 DMTCP_VERSION=2.5.1
+  - python: 2.7
+    env: TEST_ID=2 DMTCP_VERSION=2.5.1
+  - python: 2.7
+    env: TEST_ID=3 DMTCP_VERSION=2.5.1
+  - python: 2.7
+    env: TEST_ID=4 DMTCP_VERSION=2.5.1
+  - python: 2.7
+    env: TEST_ID=5 DMTCP_VERSION=2.5.1
+  - python: 2.7
+    dist: xenial
+    env: TEST_ID=1 DMTCP_VERSION=2.5.1
+  - python: 2.7
+    dist: xenial
+    env: TEST_ID=2 DMTCP_VERSION=2.5.1
+  - python: 2.7
+    dist: xenial
+    env: TEST_ID=3 DMTCP_VERSION=2.5.1
+  - python: 2.7
+    dist: xenial
+    env: TEST_ID=4 DMTCP_VERSION=2.5.1
+  - python: 2.7
+    dist: xenial
+    env: TEST_ID=5 DMTCP_VERSION=2.5.1
 addons:
   apt:
     packages:
